@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <>
-      <p>Hyyyy</p>
+      <p>SAMPLE</p>
     </>
   );
 };
