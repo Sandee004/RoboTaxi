@@ -1,10 +1,6 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { ArrowUp, ArrowDown, Users, BarChart3, Wallet } from "lucide-react";
-import Image from "next/image";
+import ProgressBar from "./Progressbar";
 
 export default function TokenTracker() {
   const [marketCap, setMarketCap] = useState(32500000);
@@ -65,14 +61,14 @@ export default function TokenTracker() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="col-span-2 grid gap-6 sm:grid-cols-2">
-            <Card className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
-                <CardTitle className="flex items-center text-lg">
+            <div className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
+                <p className="flex items-center text-lg">
                   <BarChart3 className="mr-2 h-5 w-5" />
                   Market Cap
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
+                </p>
+              </div>
+              <div className="pt-6">
                 <div className="text-2xl font-bold text-blue-800">
                   ${formatNumber(marketCap)}
                 </div>
@@ -83,17 +79,17 @@ export default function TokenTracker() {
                   </span>
                   <span className="ml-2 text-gray-500">last 24h</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-yellow-400 to-yellow-500 pb-2 pt-6 text-blue-900">
-                <CardTitle className="flex items-center text-lg">
+            <div className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 pb-2 pt-6 text-blue-900">
+                <p className="flex items-center text-lg">
                   <Users className="mr-2 h-5 w-5" />
                   Token Holders
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
+                </p>
+              </div>
+              <div className="pt-6">
                 <div className="text-2xl font-bold text-blue-800">
                   {formatNumber(holders)}
                 </div>
@@ -104,17 +100,17 @@ export default function TokenTracker() {
                   </span>
                   <span className="ml-2 text-gray-500">last 7 days</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
-                <CardTitle className="flex items-center text-lg">
+            <div className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
+                <p className="flex items-center text-lg">
                   <Wallet className="mr-2 h-5 w-5" />
                   Current Price
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
+                </p>
+              </div>
+              <div className="pt-6">
                 <div className="text-2xl font-bold text-blue-800">
                   ${price.toFixed(5)}
                 </div>
@@ -132,17 +128,17 @@ export default function TokenTracker() {
                   )}
                   <span className="ml-2 text-gray-500">last 24h</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-yellow-400 to-yellow-500 pb-2 pt-6 text-blue-900">
-                <CardTitle className="flex items-center text-lg">
+            <div className="overflow-hidden border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 pb-2 pt-6 text-blue-900">
+                <p className="flex items-center text-lg">
                   <BarChart3 className="mr-2 h-5 w-5" />
                   24h Volume
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
+                </p>
+              </div>
+              <div className="pt-6">
                 <div className="text-2xl font-bold text-blue-800">
                   ${formatNumber(volume)}
                 </div>
@@ -153,73 +149,51 @@ export default function TokenTracker() {
                   </span>
                   <span className="ml-2 text-gray-500">last 24h</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col justify-between gap-6">
-            <Card className="border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
-                <CardTitle>Token Distribution</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
+            <div className="border-blue-100 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 pb-2 pt-6 text-white">
+                <p>Token Distribution</p>
+              </div>
+              <div className="pt-6">
                 <div className="space-y-4">
                   <div>
                     <div className="mb-1 flex justify-between text-sm">
                       <span>Circulating Supply</span>
                       <span className="font-medium">{progress}%</span>
                     </div>
-                    <Progress
-                      value={progress}
-                      className="h-2 bg-blue-100"
-                      indicatorClassName="bg-blue-600"
-                    />
+                    <ProgressBar />
                   </div>
                   <div>
                     <div className="mb-1 flex justify-between text-sm">
                       <span>Team & Advisors</span>
                       <span className="font-medium">15%</span>
                     </div>
-                    <Progress
-                      value={15}
-                      className="h-2 bg-blue-100"
-                      indicatorClassName="bg-yellow-400"
-                    />
+                    <ProgressBar />
                   </div>
                   <div>
                     <div className="mb-1 flex justify-between text-sm">
                       <span>Ecosystem Growth</span>
                       <span className="font-medium">25%</span>
                     </div>
-                    <Progress
-                      value={25}
-                      className="h-2 bg-blue-100"
-                      indicatorClassName="bg-blue-400"
-                    />
+                    <ProgressBar />
                   </div>
                   <div>
                     <div className="mb-1 flex justify-between text-sm">
                       <span>Reserve</span>
                       <span className="font-medium">20%</span>
                     </div>
-                    <Progress
-                      value={20}
-                      className="h-2 bg-blue-100"
-                      indicatorClassName="bg-yellow-500"
-                    />
+                    <ProgressBar />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             <div className="relative overflow-hidden rounded-xl">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                width={400}
-                height={300}
-                alt="Token Analytics"
-                className="h-full w-full rounded-xl object-cover transition-transform duration-500 hover:scale-105"
-              />
+              <div className="h-full w-full rounded-xl object-cover transition-transform duration-500 hover:scale-105"></div>
               <div className="absolute inset-0 flex items-center justify-center bg-blue-900/60 p-6 text-center text-white">
                 <div>
                   <h3 className="mb-2 text-xl font-bold">Advanced Analytics</h3>

@@ -1,7 +1,5 @@
-"use client";
-
 import { useState } from "react";
-import { Progress } from "@/components/ui/progress";
+import ProgressBar from "./Progressbar";
 
 export default function TokenomicsSection() {
   const [isHovering, setIsHovering] = useState(false);
@@ -33,11 +31,7 @@ export default function TokenomicsSection() {
                   </span>
                   <span className="text-lg font-bold text-black">50%</span>
                 </div>
-                <Progress
-                  value={50}
-                  className="h-4 bg-gray-200"
-                  indicatorClassName="bg-yellow-500"
-                />
+                <ProgressBar />
               </div>
 
               <div>
@@ -47,11 +41,7 @@ export default function TokenomicsSection() {
                   </span>
                   <span className="text-lg font-bold text-black">30%</span>
                 </div>
-                <Progress
-                  value={30}
-                  className="h-4 bg-gray-200"
-                  indicatorClassName="bg-red-500"
-                />
+                <ProgressBar />
               </div>
 
               <div>
@@ -61,11 +51,7 @@ export default function TokenomicsSection() {
                   </span>
                   <span className="text-lg font-bold text-black">10%</span>
                 </div>
-                <Progress
-                  value={10}
-                  className="h-4 bg-gray-200"
-                  indicatorClassName="bg-blue-500"
-                />
+                <ProgressBar />
               </div>
 
               <div>
@@ -75,11 +61,7 @@ export default function TokenomicsSection() {
                   </span>
                   <span className="text-lg font-bold text-black">10%</span>
                 </div>
-                <Progress
-                  value={10}
-                  className="h-4 bg-gray-200"
-                  indicatorClassName="bg-green-500"
-                />
+                <ProgressBar />
               </div>
             </div>
           </div>
