@@ -1,15 +1,10 @@
-import Hero from "./Hero";
-import Intro from "./Intro";
+import HeroSection from "./Hero";
 
 const Home = () => {
   return (
     <>
       <div className="h-screen bg-green-500 flex flex-col">
         <HeroSection />
-        <AboutSection />
-        <TokenomicsSection />
-        <RoadmapSection />
-        <Footer />
       </div>
     </>
   );
