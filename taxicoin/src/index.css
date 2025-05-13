@@ -13,3 +13,34 @@ body::before {
   z-index: 0;
   white-space: nowrap;
 }
+
+/* globals.css */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.swell-animation {
+  animation: swell 0.1s ease-in-out;
+}
