@@ -48,13 +48,13 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-yellow-500">
+    <section className="relative flex flex-col min-h-[100vh] py-20 items-center justify-center overflow-visible bg-yellow-500">
       {/* Navigation */}
       <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white p-4 shadow-md">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src="/logo2.jpg" alt="Token Logo" className="h-10 w-10" />
-          <span className="text-2xl font-black text-black">TAXICOIN</span>
+          <span className="text-2xl font-black text-black">ROBOTAXI</span>
         </div>
 
         {/* Desktop Menu */}
@@ -183,7 +183,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center mt-30 lg:mt-50 justify-center px-4 text-center">
+      <div className="flex flex-col items-center border-b border-[#39437E] mt-30 lg:mt-50 justify-center px-4 py-8 text-center">
         <div
           className={`justify-center flex transition-all duration-700 ${
             show ? "translate-y-0" : "translate-y-10"
@@ -195,21 +195,28 @@ export default function HeroSection() {
             className="w-[80%] float-animation rounded-full md:w-[50%]"
           />
         </div>
-        <h1
-          className={`mb-2 text-7xl font-black uppercase tracking-tighter text-black md:text-5xl lg:text-6xl transition-all duration-700 delay-150 ${
-            show ? "translate-y-0" : "translate-y-10"
-          }`}
-        >
-          TAXICOIN
-        </h1>
-        <p
-          className={`mb-8 w-[85%] md:w-[70%] text-lg uppercase font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
-            show ? "translate-y-0" : "translate-y-10"
-          }`}
-        >
-          A memecoin honouring ElonMusk's ambitious vision of fully autonomous
-          future ( Robotaxi / cybercab )
-        </p>
+        <div className="flex gap-3 justify-center items-center flex-col">
+          <h1
+            className={`mb-2 text-7xl font-black uppercase tracking-tighter text-black md:text-5xl lg:text-6xl transition-all duration-700 delay-150 ${
+              show ? "translate-y-0" : "translate-y-10"
+            }`}
+          >
+            TAXICOIN
+          </h1>
+          <p
+            className={` w-[85%] md:w-[70%] text-lg font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
+              show ? "translate-y-0" : "translate-y-10"
+            }`}
+          >
+            A memecoin honouring ElonMusk's ambitious vision of fully autonomous
+            future ( Robotaxi / cybercab )
+          </p>
+          <a href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF">
+            <button className="bg-yellow-400 text-[#39437E] font-bold py-3 px-6 rounded-lg border-b-4 border-[#39437E] shadow-[0_4px_0_0_#39437E] transition-all duration-100 hover:translate-y-1 hover:shadow-none active:translate-y-1 active:shadow-none active:border-b-0">
+              Buy Now
+            </button>
+          </a>
+        </div>
       </div>
     </section>
   );
