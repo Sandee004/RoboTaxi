@@ -78,10 +78,10 @@ export default function HeroSection() {
 
             <div className="relative group">
               <a href="https://etherscan.io/address/0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/dexscreener.png" className="w-10 h-10" />
+                <img src="/etherscan2.jpg" className="w-10 h-10" />
               </a>
               <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                DexScreener
+                Etherscan
               </span>
             </div>
 
@@ -124,7 +124,31 @@ export default function HeroSection() {
             onClick={() => setMenuOpen(false)}
             className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
           >
-            BUY
+            ABOUT
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
+          >
+            TOKENOMICS
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
+          >
+            HOW TO BUY
+          </a>
+
+          <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
+          >
+            COMMUNITY
           </a>
 
           <div className="w-full justify-center border-black border-2 rounded-lg py-2 flex gap-8">
@@ -139,10 +163,10 @@ export default function HeroSection() {
 
             <div className="relative group">
               <a href="https://etherscan.io/address/0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/dexscreener.png" className="w-10 h-10" />
+                <img src="/etherscan2.jpg" className="w-10 h-10" />
               </a>
               <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                DexScreener
+                Etherscan
               </span>
             </div>
 
@@ -179,7 +203,7 @@ export default function HeroSection() {
           TAXICOIN
         </h1>
         <p
-          className={`mb-8 w-[85%] md:w-[70%] text-lg upercase font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
+          className={`mb-8 w-[85%] md:w-[70%] text-lg uppercase font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
             show ? "translate-y-0" : "translate-y-10"
           }`}
         >
