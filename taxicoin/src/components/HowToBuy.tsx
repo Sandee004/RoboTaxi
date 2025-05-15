@@ -40,6 +40,7 @@ const InstructionCard: React.FC<InstructionCardProps> = ({ step }) => {
 
   return (
     <motion.div
+    id="howtobuy"
       ref={ref}
       variants={variants}
       initial="hidden"
@@ -90,7 +91,7 @@ const HowToBuy: React.FC = () => {
   ];
 
   return (
-    <div className="bg-yellow-500 text-white flex flex-col justify-center py-20">
+    <div className="bg-yellow-500 text-white flex flex-col justify-center py-40">
       <h1 className="text-center text-3xl underline mb-8">How To Buy</h1>
 
       <div className="flex flex-col gap-7 items-center">

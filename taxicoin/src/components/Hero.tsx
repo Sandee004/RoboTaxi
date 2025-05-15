@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import { Twitter, Send } from "lucide-react"; // Send = paper plane (Telegram style)
 
 export default function HeroSection() {
   const [show, setShow] = useState(false);
@@ -128,7 +129,7 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="#"
+            href="#tokenomics"
             onClick={() => setMenuOpen(false)}
             className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
           >
@@ -136,7 +137,7 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="#"
+            href="#howtobuy"
             onClick={() => setMenuOpen(false)}
             className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
           >
@@ -184,6 +185,30 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="flex flex-col items-center border-b border-[#39437E] mt-30 lg:mt-50 justify-center px-4 py-8 text-center">
+        <div className="flex w-full justify-between my-8">
+          <a
+            href="https://twitter.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center gap-2 bg-yellow-400 text-[#39437E] font-bold py-3 px-6 rounded-lg border-b-4 border-[#39437E] shadow-[0_4px_0_0_#39437E] transition-all duration-100 hover:translate-y-1 hover:shadow-none active:translate-y-1 active:shadow-none active:border-b-0">
+              <Twitter className="w-5 h-5" />
+              Twitter
+            </button>
+          </a>
+
+          {/* Telegram */}
+          <a
+            href="https://t.me/yourtelegram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center gap-2 bg-yellow-400 text-[#39437E] font-bold py-3 px-6 rounded-lg border-b-4 border-[#39437E] shadow-[0_4px_0_0_#39437E] transition-all duration-100 hover:translate-y-1 hover:shadow-none active:translate-y-1 active:shadow-none active:border-b-0">
+              <Send className="w-5 h-5" />
+              Telegram
+            </button>
+          </a>
+        </div>
         <div
           className={`justify-center flex transition-all duration-700 ${
             show ? "translate-y-0" : "translate-y-10"
