@@ -1,39 +1,8 @@
-import { useEffect, useRef } from "react";
-import clsx from "clsx"; // optional, for class merging
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import clsx from "clsx";
 
 const HowToBuy = () => {
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target as HTMLDivElement;
-          const index = Number(el.dataset.index);
-          if (entry.isIntersecting) {
-            el.classList.add("opacity-100", "translate-x-0");
-            el.classList.remove(
-              "opacity-0",
-              "translate-x-[-100px]",
-              "translate-x-[100px]"
-            );
-          } else {
-            el.classList.remove("opacity-100", "translate-x-0");
-            el.classList.add(
-              "opacity-0",
-              index % 2 === 0 ? "translate-x-[-100px]" : "translate-x-[100px]"
-            );
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    itemsRef.current.forEach((el) => el && observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const instructions = [
     {
       image: "/15.png",
@@ -51,7 +20,7 @@ const HowToBuy = () => {
       image: "/15.png",
       title: "GO TO UNISWAP",
       description:
-        "connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app. Connect your wallet. Paste the $ticker token address into Uniswap, select ROBOTAXI, and confirm. When Metamask prompts you for a wallet signature, sign.",
+        "Connect to Uniswap. Go to app.uniswap.org in Google Chrome or on the browser inside your Metamask app. Connect your wallet. Paste the $ticker token address into Uniswap, select ROBOTAXI, and confirm. When Metamask prompts you for a wallet signature, sign.",
     },
     {
       image: "/15.png",
@@ -62,31 +31,56 @@ const HowToBuy = () => {
   ];
 
   return (
-    <div className="text-white min-h-screen bg-[#000080] flex-col justify-center py-8">
-      <h1 className="text-center text-2xl underline">How To Buy</h1>
+    <div className="overflow-x-hidden bg-[#000080] text-white flex flex-col justify-center py-20 min-h-screen">
+      <h1 className="text-center text-3xl underline mb-8">How To Buy</h1>
 
-      <div className="flex flex-col gap-7 items-center my-5 justify-center">
+      <div className="flex flex-col gap-7 items-center">
         {instructions.map((step, i) => (
-          <div
-            key={i}
-            ref={(el) => {
-              itemsRef.current[i] = el;
-            }}
-            data-index={i}
-            className={clsx(
-              "w-[97%] md:w-[85%] px-4 py-3 border-4 gap-5 rounded-md border-yellow-300 flex transform transition-all duration-700 ease-out opacity-0",
-              i % 2 === 0 ? "translate-x-[-100px]" : "translate-x-[100px]"
-            )}
-          >
-            <img src={step.image} alt={step.title} className="w-18" />
-            <div className="flex flex-col">
-              <p className="font-bold">{step.title}</p>
-              <p>{step.description}</p>
-            </div>
-          </div>
+          <InstructionCard key={i} step={step} index={i} />
         ))}
       </div>
     </div>
+  );
+};
+
+const InstructionCard = ({ step, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    threshold: 0.1,
+    once: false, // Ensures animation triggers every time the element enters the viewport
+  });
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: index % 2 === 0 ? -40 : 40, // Slide from left or right based on index
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className={clsx(
+        "w-[97%] md:w-[85%] px-4 py-3 border-4 gap-5 rounded-md border-yellow-300 flex"
+      )}
+    >
+      <img src={step.image} alt={step.title} className="w-18" />
+      <div className="flex flex-col">
+        <p className="font-bold">{step.title}</p>
+        <p>{step.description}</p>
+      </div>
+    </motion.div>
   );
 };
 
