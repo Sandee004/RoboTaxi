@@ -11,7 +11,7 @@ const Tokenomics = () => {
   };
 
   return (
-    <section id="tokenomics" className="py-16 bg-yellow-500 text-center">
+    <section id="tokenomics" className="pb-12 pt-10 bg-yellow-500 text-center">
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <motion.h2
@@ -35,7 +35,7 @@ const Tokenomics = () => {
             <motion.div
               key={i}
               custom={i}
-              className="bg-[#39437E]/60 rounded-lg p-6 shadow-md"
+              className="bg-[#39437E]/80 rounded-lg p-6 shadow-md"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}

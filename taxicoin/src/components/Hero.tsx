@@ -184,8 +184,8 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center border-b border-[#39437E] mt-30 lg:mt-50 justify-center px-4 py-8 text-center">
-        <div className="flex w-full justify-between my-8">
+      <div className="flex flex-col items-center w-full border-b border-[#39437E] mt-30 lg:mt-50 justify-center py-8 text-center">
+        <div className="flex w-full justify-between px-8 my-8">
           <a
             href="https://twitter.com/yourprofile"
             target="_blank"
@@ -209,6 +209,7 @@ export default function HeroSection() {
             </button>
           </a>
         </div>
+
         <div
           className={`justify-center flex transition-all duration-700 ${
             show ? "translate-y-0" : "translate-y-10"
@@ -220,13 +221,14 @@ export default function HeroSection() {
             className="w-[80%] float-animation rounded-full md:w-[50%]"
           />
         </div>
+
         <div className="flex gap-3 justify-center items-center flex-col">
           <h1
             className={`mb-2 text-7xl font-black uppercase tracking-tighter text-black md:text-5xl lg:text-6xl transition-all duration-700 delay-150 ${
               show ? "translate-y-0" : "translate-y-10"
             }`}
           >
-            TAXICOIN
+            ROBOTAXI
           </h1>
           <p
             className={` w-[85%] md:w-[70%] text-lg font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
