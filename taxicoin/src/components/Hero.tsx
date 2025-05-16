@@ -121,7 +121,7 @@ export default function HeroSection() {
       >
         <div className="flex flex-col items-center gap-4 p-4">
           <a
-            href="#"
+            href="#about"
             onClick={() => setMenuOpen(false)}
             className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
           >
@@ -145,11 +145,11 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="#"
+            href="#roadmap"
             onClick={() => setMenuOpen(false)}
             className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
           >
-            COMMUNITY
+            ROADMAP
           </a>
 
           <div className="w-full justify-center border-black border-2 rounded-lg py-2 flex gap-8">
@@ -185,9 +185,9 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="flex flex-col items-center w-full border-b border-[#39437E] mt-30 lg:mt-50 justify-center py-8 text-center">
-        <div className="flex w-full justify-between px-8 my-8">
+        <div className="flex w-full justify-center gap-[18vw] md:gap-[40%] px-8 md:my-5 mt-30 mb-8">
           <a
-            href="https://twitter.com/yourprofile"
+            href="https://x.com/EthRoboTaxi"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -199,7 +199,7 @@ export default function HeroSection() {
 
           {/* Telegram */}
           <a
-            href="https://t.me/yourtelegram"
+            href="https://t.me/RoboTaxiPortal"
             target="_blank"
             rel="noopener noreferrer"
           >

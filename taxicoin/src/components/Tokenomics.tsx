@@ -11,7 +11,10 @@ const Tokenomics = () => {
   };
 
   return (
-    <section id="tokenomics" className="pb-12 pt-10 bg-yellow-500 text-center">
+    <section
+      id="tokenomics"
+      className="pb-12 pt-10 bg-yellow-500 border-b border-[#39437E] text-center"
+    >
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <motion.h2

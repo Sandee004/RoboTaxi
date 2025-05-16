@@ -1,6 +1,9 @@
 const About = () => {
   return (
-    <div className="bg-yellow-500 pt-40 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8">
+    <div
+      id="about"
+      className="bg-yellow-500 pt-54 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8"
+    >
       <div className="md:w-1/3">
         <img
           className="rounded-md md:h-[1024px] w-[768px]"
