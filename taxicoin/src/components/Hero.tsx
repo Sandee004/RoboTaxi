@@ -1,189 +1,59 @@
-import { useEffect, useState, useRef } from "react";
-import { Menu, X } from "lucide-react";
-import { Twitter, Send } from "lucide-react"; // Send = paper plane (Telegram style)
+import { Twitter, Send } from "lucide-react";
+import Header from "./Header";
 
 export default function HeroSection() {
-  const [show, setShow] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    let count = 0;
-    const interval = setInterval(() => {
-      setAnimate(true);
-      setTimeout(() => setAnimate(false), 100); // match animation duration
-      count++;
-      if (count >= 5) clearInterval(interval); // stop after 5 times
-    }, 5000); // every 5 seconds
-
-    return () => clearInterval(interval); // cleanup
-  }, []);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setShow(true), 100);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !(menuRef.current as HTMLElement).contains(event.target as Node)
-      ) {
-        setMenuOpen(false);
-      }
-    };
-
-    const handleScroll = () => {
-      setMenuOpen(false);
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
+    <>
+      <Header />
+      <main className="pt-18 bg-yellow-500">
+        <div className="relative w-full">
+          {/* Background image */}
+          <img src="/home.jpg" className="w-full h-auto object-cover" />
+
+          {/* Overlay content (buttons) */}
+          <div className="absolute top-[70%] left-1/2 flex w-full justify-center gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] px-4 transform -translate-x-1/2 -translate-y-1/2">
+            <a
+              href="https://x.com/EthRoboTaxi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="flex items-center gap-2 bg-yellow-400 text-[#39437E] font-bold 
+          py-2 px-4 sm:py-2.5 sm:px-5 md:py-3 md:px-6 
+          rounded-full border-b-4 border-[#39437E] 
+          shadow-[0_4px_0_0_#39437E] transition-all duration-100 
+          hover:translate-y-1 hover:shadow-none 
+          active:translate-y-1 active:shadow-none active:border-b-0"
+              >
+                <Twitter className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+              </button>
+            </a>
+
+            <a
+              href="https://t.me/RoboTaxiPortal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="flex items-center gap-2 bg-yellow-400 text-[#39437E] font-bold 
+          py-2 px-4 sm:py-2.5 sm:px-5 md:py-3 md:px-6 
+          rounded-full border-b-4 border-[#39437E] 
+          shadow-[0_4px_0_0_#39437E] transition-all duration-100 
+          hover:translate-y-1 hover:shadow-none 
+          active:translate-y-1 active:shadow-none active:border-b-0"
+              >
+                <Send className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+              </button>
+            </a>
+          </div>
+        </div>
+      </main>
+    </>
+
+    // The following Hero Content section is commented out to avoid syntax errors.
+    /*
     <section className="relative flex flex-col min-h-[100vh] py-20 items-center justify-center overflow-visible bg-yellow-500">
-      {/* Navigation */}
-      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white p-4 shadow-md">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src="/logo2.jpg" alt="Token Logo" className="h-10 w-10" />
-          <span className="text-2xl font-black text-black">ROBOTAXI</span>
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-4">
-          <a
-            href="#"
-            className="rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 font-bold text-black transition-transform hover:scale-105 hover:bg-yellow-200"
-          >
-            BUY
-          </a>
-
-          <div className="flex gap-5">
-            <div className="relative group">
-              <a href="https://coinmarketcap.com/currencies/robotaxi/">
-                <img src="/coinmarketcap.png" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                CoinMarketCap
-              </span>
-            </div>
-
-            <div className="relative group">
-              <a href="https://etherscan.io/address/0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/etherscan2.jpg" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                Etherscan
-              </span>
-            </div>
-
-            <div className="relative group">
-              <a href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/uniswap2.jpg" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                Uniswap
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden focus:outline-none ${
-            animate ? "swell-animation" : ""
-          }`}
-        >
-          {menuOpen ? (
-            <X className="h-6 w-6 text-black" />
-          ) : (
-            <Menu className="h-6 w-6 text-black" />
-          )}
-        </button>
-      </nav>
-
-      {/* Slide-down Mobile Menu */}
-      <div
-        ref={menuRef}
-        className={`fixed top-18 left-0 z-40 w-full bg-white shadow-md md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-96 translate-y-0" : "max-h-0 -translate-y-4"
-        }`}
-      >
-        <div className="flex flex-col items-center gap-4 p-4">
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
-          >
-            ABOUT
-          </a>
-
-          <a
-            href="#tokenomics"
-            onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
-          >
-            TOKENOMICS
-          </a>
-
-          <a
-            href="#howtobuy"
-            onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
-          >
-            HOW TO BUY
-          </a>
-
-          <a
-            href="#roadmap"
-            onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
-          >
-            ROADMAP
-          </a>
-
-          <div className="w-full justify-center border-black border-2 rounded-lg py-2 flex gap-8">
-            <div className="relative group">
-              <a href="https://coinmarketcap.com/currencies/robotaxi/">
-                <img src="/coinmarketcap.png" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                CoinMarketCap
-              </span>
-            </div>
-
-            <div className="relative group">
-              <a href="https://etherscan.io/address/0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/etherscan2.jpg" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                Etherscan
-              </span>
-            </div>
-
-            <div className="relative group">
-              <a href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF">
-                <img src="/uniswap2.jpg" className="w-10 h-10" />
-              </a>
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                Uniswap
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero Content */}
+      <Header />
       <div className="flex flex-col items-center w-full border-b border-[#39437E] mt-30 lg:mt-50 justify-center py-8 text-center">
         <div className="flex w-full justify-center gap-[18vw] md:gap-[40%] px-8 md:my-5 mt-30 mb-8">
           <a
@@ -196,8 +66,6 @@ export default function HeroSection() {
               Twitter
             </button>
           </a>
-
-          {/* Telegram */}
           <a
             href="https://t.me/RoboTaxiPortal"
             target="_blank"
@@ -209,7 +77,6 @@ export default function HeroSection() {
             </button>
           </a>
         </div>
-
         <div
           className={`justify-center flex transition-all duration-700 ${
             show ? "translate-y-0" : "translate-y-10"
@@ -221,7 +88,6 @@ export default function HeroSection() {
             className="w-[80%] float-animation rounded-full md:w-[50%]"
           />
         </div>
-
         <div className="flex gap-3 justify-center items-center flex-col">
           <h1
             className={`mb-2 text-7xl font-black uppercase tracking-tighter text-black md:text-5xl lg:text-6xl transition-all duration-700 delay-150 ${
@@ -236,7 +102,7 @@ export default function HeroSection() {
             }`}
           >
             A memecoin honouring ElonMusk's ambitious vision of fully autonomous
-            future ( Robotaxi / cybercab )
+            future ( Tesla cybercab )
           </p>
           <a href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF">
             <button className="bg-yellow-400 text-[#39437E] font-bold py-3 px-6 rounded-lg border-b-4 border-[#39437E] shadow-[0_4px_0_0_#39437E] transition-all duration-100 hover:translate-y-1 hover:shadow-none active:translate-y-1 active:shadow-none active:border-b-0">
@@ -246,5 +112,6 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+    */
   );
 }
