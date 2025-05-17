@@ -13,12 +13,12 @@ const Tokenomics = () => {
   return (
     <section
       id="tokenomics"
-      className="pb-12 pt-10 bg-yellow-500 border-b border-[#39437E] text-center"
+      className="pb-12 pt-10 bg-[#0cc0df] border-b border-[#39437E] text-center"
     >
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <motion.h2
-          className="text-4xl font-extrabold text-[#39437E] mb-12"
+          className="text-4xl font-extrabold text-black mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
@@ -38,13 +38,13 @@ const Tokenomics = () => {
             <motion.div
               key={i}
               custom={i}
-              className="bg-[#39437E]/80 rounded-lg p-6 shadow-md"
+              className="bg-[#39437E] rounded-lg p-6 shadow-md"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               variants={fadeZoom}
             >
-              <h3 className="text-3xl font-bold text-yellow-100">
+              <h3 className="text-3xl font-bold text-[#0cc0df]">
                 {item.title}
               </h3>
               <p className="mt-2 text-lg font-semibold text-gray-200 uppercase">

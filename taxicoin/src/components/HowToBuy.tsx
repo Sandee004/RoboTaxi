@@ -46,7 +46,7 @@ const InstructionCard: React.FC<InstructionCardProps> = ({ step }) => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className={clsx(
-        "w-full max-w-[97%] md:max-w-[85%] px-4 py-3 border-3 bg-[#39437E] gap-5 rounded-md border-gray-200 flex items-center box-border"
+        "w-full max-w-[97%] md:max-w-[85%] px-4 py-3 border-3 bg-[#39437E] gap-5 rounded-md border-gray-200 flex items-center box-border text-white"
       )}
     >
       <img
@@ -91,8 +91,8 @@ const HowToBuy: React.FC = () => {
   ];
 
   return (
-    <div className="bg-yellow-500 text-white flex flex-col justify-center pb-12 pt-10 border-b border-[#39437E]">
-      <h1 className="text-4xl text-center font-extrabold text-[#39437E] mb-8">
+    <div className="bg-[#0cc0df] text-white flex flex-col justify-center pb-12 pt-10 border-b border-[#39437E]">
+      <h1 className="text-4xl text-center font-extrabold text-black mb-8">
         How To Buy
       </h1>
 

@@ -42,7 +42,7 @@ const Header = () => {
   }, []);
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white p-4 shadow-md">
+      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-[#0cc0df] p-4 shadow-md">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src="/logo2.jpg" alt="Token Logo" className="h-10 w-10" />
@@ -53,7 +53,7 @@ const Header = () => {
         <div className="hidden md:flex gap-4">
           <a
             href="#"
-            className="rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 font-bold text-black transition-transform hover:scale-105 hover:bg-yellow-200"
+            className="rounded-lg border-2 border-gray-200 bg-[#39437E] px-5 py-2 font-bold text-white transition-transform hover:scale-105 hover:bg-[#737AA8]"
           >
             BUY
           </a>
@@ -96,9 +96,9 @@ const Header = () => {
           }`}
         >
           {menuOpen ? (
-            <X className="h-6 w-6 text-black" />
+            <X className="h-6 w-6 text-white" />
           ) : (
-            <Menu className="h-6 w-6 text-black" />
+            <Menu className="h-6 w-6 text-white" />
           )}
         </button>
       </nav>
@@ -114,7 +114,7 @@ const Header = () => {
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
+            className="w-full rounded-lg border-2 border-black bg-[#0cc0df] px-4 py-2 text-center font-bold text-white hover:bg-[#737AA8]"
           >
             ABOUT
           </a>
@@ -122,7 +122,7 @@ const Header = () => {
           <a
             href="#tokenomics"
             onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
+            className="w-full rounded-lg border-2 border-black bg-[#39437E] px-4 py-2 text-center font-bold text-white hover:bg-[#737AA8]"
           >
             TOKENOMICS
           </a>
@@ -130,7 +130,7 @@ const Header = () => {
           <a
             href="#howtobuy"
             onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-center font-bold text-black hover:bg-yellow-200"
+            className="w-full rounded-lg border-2 border-black bg-[#0cc0df] px-4 py-2 text-center font-bold text-white hover:bg-[#737AA8]"
           >
             HOW TO BUY
           </a>
@@ -138,12 +138,12 @@ const Header = () => {
           <a
             href="#roadmap"
             onClick={() => setMenuOpen(false)}
-            className="w-full rounded-lg border-2 border-black bg-gray-300 px-4 py-2 text-center font-bold text-black hover:bg-gray-200"
+            className="w-full rounded-lg border-2 border-black bg-[#39437E] px-4 py-2 text-center font-bold text-white hover:bg-[#737AA8]"
           >
             ROADMAP
           </a>
 
-          <div className="w-full justify-center border-black border-2 rounded-lg py-2 flex gap-8">
+          <div className="w-full justify-center bg-[#0cc0df] border-black border-2 rounded-lg py-2 flex gap-8">
             <div className="relative group">
               <a href="https://coinmarketcap.com/currencies/robotaxi/">
                 <img src="/coinmarketcap.png" className="w-10 h-10" />

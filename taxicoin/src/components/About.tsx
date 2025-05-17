@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="bg-yellow-500 pt-54 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8"
+      className="bg-[#0cc0df] pt-54 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8"
     >
       <div className="md:w-1/3">
         <img
@@ -12,10 +12,10 @@ const About = () => {
       </div>
 
       <div className="flex justify-center items-center md:w-2/3 flex-col">
-        <p className="text-4xl font-extrabold text-[#39437E] mb-5">
+        <p className="text-4xl font-extrabold text-[#0cc0df] mb-5">
           INTRODUCING ROBOTAXI $TAXI
         </p>
-        <p className="text-2xl font-extrabold text-black/90">
+        <p className="text-2xl font-extrabold text-black">
           Robotaxi (TAXI) is an Ethereum-based blockchain project created to
           honor Elon Musk's ambitious vision of a fully autonomous future.
           Musk's new groundbreaking plan centers around the development of
@@ -23,10 +23,10 @@ const About = () => {
           the traditional taxi industry.
         </p>
 
-        <p className="text-3xl font-extrabold text-[#39437E] mt-9 mb-5">
+        <p className="text-3xl font-extrabold text-[#0cc0df] mt-9 mb-5">
           The Robotaxi: A Revolution in the Making
         </p>
-        <p className="font-extrabold text-2xl text-black/90">
+        <p className="font-extrabold text-2xl text-black">
           The Robotaxi could redefine urban transportation as we know it.
           Without the need for human drivers, the robotaxi will be a more
           affordable, efficient, and sustainable alternative to modern
