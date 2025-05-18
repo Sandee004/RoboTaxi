@@ -1,7 +1,15 @@
 import { Twitter, Send } from "lucide-react";
 import Header from "./Header";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShow(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
       <Header />
@@ -25,7 +33,7 @@ export default function HeroSection() {
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <Twitter className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
+                <Twitter className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />
               </button>
             </a>
 
@@ -48,11 +56,28 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <img src="/floatingimg.png" />
-        <p>
-          Robotaxi is a memecoin created to honour ElonMusk's ambitious vision
-          of fully autonomous future ( Tesla Robotaxi)
-        </p>
+        <div className="flex justify-center mt-5 items-center flex-col">
+          <div
+            className={`justify-center flex transition-all duration-700 ${
+              show ? "translate-y-0" : "translate-y-10"
+            }`}
+          >
+            <img
+              src="/floatingimg.png"
+              alt="Wanna buy $robotaxi"
+              className="float-animation"
+            />
+          </div>
+
+          <p
+            className={`px-8 md:px-12 pb-10 border-b border-[#39437E] text-lg text-center font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
+              show ? "translate-y-0" : "translate-y-10"
+            }`}
+          >
+            Robotaxi is a memecoin created to honour ElonMusk's ambitious vision
+            of fully autonomous future ( Tesla Robotaxi)
+          </p>
+        </div>
       </main>
     </>
   );

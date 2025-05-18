@@ -42,11 +42,11 @@ const Header = () => {
   }, []);
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-[#0cc0df] p-4 shadow-md">
+      <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-[#39437E] p-4 shadow-md">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src="/logo2.jpg" alt="Token Logo" className="h-10 w-10" />
-          <span className="text-2xl font-black text-black">ROBOTAXI</span>
+          <span className="text-2xl font-black text-white">ROBOTAXI</span>
         </div>
 
         {/* Desktop Menu */}
@@ -61,7 +61,7 @@ const Header = () => {
           <div className="flex gap-5">
             <div className="relative group">
               <a href="https://coinmarketcap.com/currencies/robotaxi/">
-                <img src="/coinmarketcap.png" className="w-10 h-10" />
+                <img src="/coinmarketcap.jpg" className="w-10 h-10" />
               </a>
               <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 CoinMarketCap
@@ -146,7 +146,7 @@ const Header = () => {
           <div className="w-full justify-center bg-[#0cc0df] border-black border-2 rounded-lg py-2 flex gap-8">
             <div className="relative group">
               <a href="https://coinmarketcap.com/currencies/robotaxi/">
-                <img src="/coinmarketcap.png" className="w-10 h-10" />
+                <img src="/coinmarketcap.jpg" className="w-10 h-10" />
               </a>
               <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 CoinMarketCap

@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="bg-[#0cc0df] pt-54 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8"
+      className="bg-[#0cc0df] pt-24 border-b border-[#39437E] pb-12 gap-5 items-center justify-center flex flex-col md:flex-row px-5 md:px-8"
     >
       <div className="md:w-1/3">
         <img
