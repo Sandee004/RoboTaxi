@@ -27,13 +27,13 @@ export default function HeroSection() {
             >
               <button
                 className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
-          py-3 px-3 sm:py-4 sm:px-4 md:py-5 md:px-5 
+          w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
           rounded-full border-b-4 border-[#39437E] 
           shadow-[0_4px_0_0_#0cc0df] transition-all duration-100 
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <img src="/twitter.jpg" className="w-full h-full rounded-full" />
+                <img src="/twitter.jpg" className="w-full object-cover h-full rounded-full" />
               </button>
             </a>
 
@@ -44,13 +44,13 @@ export default function HeroSection() {
             >
               <button
                 className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
-          py-3 px-3 sm:py-4 sm:px-4 md:py-5 md:px-5 
+          w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
           rounded-full border-b-4 border-[#39437E]
           shadow-[0_4px_0_0_#0cc0df] transition-all duration-100 
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <img src="/telegram.jpg" className="w-full h-full rounded-full" />
+                <img src="/telegram.jpg" className="w-full h-full object-cover rounded-full" />
               </button>
             </a>
           </div>
