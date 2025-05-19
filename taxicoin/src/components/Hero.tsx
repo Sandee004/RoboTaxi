@@ -33,7 +33,7 @@ export default function HeroSection() {
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <img src="/twitter.jpg" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />
+                <img src="/twitter.jpg" className="w-full h-full rounded-full" />
               </button>
             </a>
 
@@ -50,7 +50,7 @@ export default function HeroSection() {
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <img src="/telegram.jpg" className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
+                <img src="/telegram.jpg" className="w-full h-full rounded-full" />
               </button>
             </a>
           </div>
