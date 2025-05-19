@@ -52,7 +52,7 @@ const Header = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-4">
           <a
-            href="#"
+            href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF"
             className="rounded-lg border-2 border-gray-200 bg-[#39437E] px-5 py-2 font-bold text-white transition-transform hover:scale-105 hover:bg-[#737AA8]"
           >
             BUY
