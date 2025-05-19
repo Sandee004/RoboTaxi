@@ -1,4 +1,4 @@
-import { Twitter, Send } from "lucide-react";
+
 import Header from "./Header";
 import { useEffect, useState } from "react";
 
@@ -50,7 +50,7 @@ export default function HeroSection() {
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
               >
-                <Send className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
+                <img src="/telegram.jpg" className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9" />
               </button>
             </a>
           </div>
