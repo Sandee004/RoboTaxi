@@ -21,7 +21,7 @@ export default function HeroSection() {
           {/* Overlay content (buttons) */}
           <div className="absolute top-[70%] left-1/2 flex w-full justify-center gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] px-4 transform -translate-x-1/2 -translate-y-1/2">
             <a
-              href="https://x.com/EthRoboTaxi"
+              href="https://x.com/_taximeme"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -38,7 +38,7 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="https://t.me/RoboTaxiPortal"
+              href="https://t.me/Robotaximeme"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -56,7 +56,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-5 items-center flex-col">
+        <div className="flex justify-center border-b border-[#39437E] pb-5 mt-5 items-center flex-col">
           <div
             className={`justify-center flex transition-all duration-700 ${
               show ? "translate-y-0" : "translate-y-10"
@@ -70,13 +70,29 @@ export default function HeroSection() {
           </div>
 
           <p
-            className={`px-8 md:px-12 pb-10 border-b border-[#39437E] text-lg text-center font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
+            className={`px-8 md:px-12 pb-10 text-lg text-center font-bold text-black md:text-2xl transition-all duration-700 delay-300 ${
               show ? "translate-y-0" : "translate-y-10"
             }`}
           >
             Robotaxi is a memecoin created to honour ElonMusk's ambitious vision
             of fully autonomous future ( Tesla Robotaxi)
           </p>
+          <a
+            href="https://app.uniswap.org/swap?outputCurrency=0x2597342ff387B63846eb456419590781C4bfCdAF"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
+          py-3 px-4 md:py-2 md:px-5 
+          rounded-sm border-b-4 border-[#39437E] 
+          shadow-[0_4px_0_0_black] transition-all duration-100 
+          hover:translate-y-1 hover:shadow-none 
+          active:translate-y-1 active:shadow-none active:border-b-0"
+            >
+              Buy Now
+            </button>
+          </a>
         </div>
       </main>
     </>
