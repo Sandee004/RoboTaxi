@@ -12,15 +12,22 @@ export default function CopyAddress() {
   };
 
   return (
-    <div className="w-[80%] bg-[#39437E] rounded-sm flex items-center px-2 py-1">
+    <div className="bg-[#39437E] w-[80%] lg:w-[30%] lg:text-center rounded-sm flex items-center px-3 py-1 md:py-3">
       <input
         type="text"
         value={address}
         readOnly
         className="flex-1 bg-transparent outline-none text-sm text-gray-200"
       />
-      <button onClick={handleCopy} className="ml-2 text-gray-500 hover:text-black">
-        {copied ? <Check className="w-4 h-4" /> : <ClipboardCopy className="w-4 h-4" />}
+      <button
+        onClick={handleCopy}
+        className="ml-2 text-[#0cc0df] hover:cursor-pointer"
+      >
+        {copied ? (
+          <Check className="w-6 h-6" />
+        ) : (
+          <ClipboardCopy className="w-6 h-6" />
+        )}
       </button>
     </div>
   );

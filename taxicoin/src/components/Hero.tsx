@@ -1,4 +1,3 @@
-
 import Header from "./Header";
 import CopyAddress from "./CopyAddress";
 import { useEffect, useState } from "react";
@@ -20,45 +19,52 @@ export default function HeroSection() {
           <img src="/home.jpg" className="w-full h-auto object-cover" />
 
           {/* Overlay content (buttons) */}
-          <div className="absolute top-[70%] left-1/2 flex w-full justify-center gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] px-4 transform -translate-x-1/2 -translate-y-1/2">
-            <div>
-            <a
-              href="https://x.com/_taximeme"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
+          <div className="absolute top-[70%] left-1/2 flex flex-col w-full justify-center px-4 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="flex gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] justify-center">
+              <a
+                href="https://x.com/_taximeme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
           w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
           rounded-full border-b-4 border-[#39437E] 
           shadow-[0_4px_0_0_#0cc0df] transition-all duration-100 
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
-              >
-                <img src="/twitter.jpg" className="w-full object-cover h-full rounded-full" />
-              </button>
-            </a>
+                >
+                  <img
+                    src="/twitter.jpg"
+                    className="w-full object-cover h-full rounded-full"
+                  />
+                </button>
+              </a>
 
-            <a
-              href="https://t.me/Robotaximeme"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
+              <a
+                href="https://t.me/Robotaximeme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className="flex items-center gap-2 bg-[#39437E] text-[#0cc0df] font-bold 
           w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
           rounded-full border-b-4 border-[#39437E]
           shadow-[0_4px_0_0_#0cc0df] transition-all duration-100 
           hover:translate-y-1 hover:shadow-none 
           active:translate-y-1 active:shadow-none active:border-b-0"
-              >
-                <img src="/telegram.jpg" className="w-full h-full object-cover rounded-full" />
-              </button>
-            </a>
-              </div>
-<div>
-            <CopyAddress />
-  </div>
+                >
+                  <img
+                    src="/telegram.jpg"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </button>
+              </a>
+            </div>
+
+            <div className="flex mt-8 justify-center">
+              <CopyAddress />
+            </div>
           </div>
         </div>
 
