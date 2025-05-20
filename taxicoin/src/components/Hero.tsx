@@ -21,6 +21,7 @@ export default function HeroSection() {
 
           {/* Overlay content (buttons) */}
           <div className="absolute top-[70%] left-1/2 flex w-full justify-center gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] px-4 transform -translate-x-1/2 -translate-y-1/2">
+            <div>
             <a
               href="https://x.com/_taximeme"
               target="_blank"
@@ -54,8 +55,10 @@ export default function HeroSection() {
                 <img src="/telegram.jpg" className="w-full h-full object-cover rounded-full" />
               </button>
             </a>
-
+              </div>
+<div>
             <CopyAddress />
+  </div>
           </div>
         </div>
 
