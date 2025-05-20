@@ -20,7 +20,7 @@ export default function HeroSection() {
 
           {/* Overlay content (buttons) */}
           <div className="absolute top-[70%] left-1/2 flex flex-col w-full justify-center px-4 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="flex gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] justify-center">
+            <div className="flex mt-8 gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] justify-center">
               <a
                 href="https://x.com/_taximeme"
                 target="_blank"
@@ -62,7 +62,7 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="flex mt-8 justify-center">
+            <div className="flex mt-8 mb-5 justify-center">
               <CopyAddress />
             </div>
           </div>
