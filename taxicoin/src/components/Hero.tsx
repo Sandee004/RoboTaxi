@@ -62,8 +62,8 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="flex mt-8 mb-5 justify-center">
-              <p>Contract Address</p>
+            <div className="flex flex-col mt-8 mb-5 items-center justify-center">
+              <p className="font-bold">Contract Address</p>
               <CopyAddress />
             </div>
           </div>
