@@ -12,7 +12,7 @@ export default function CopyAddress() {
   };
 
   return (
-    <div className="bg-[#39437E] w-[85%] lg:w-[32%] lg:text-center rounded-sm flex items-center px-3 py-1 md:py-3">
+    <div className="bg-[#39437E] w-[92%] lg:w-[38%] lg:text-center rounded-sm flex items-center px-3 py-1 md:py-3">
       <span className="text-white px-2 font-bold">Contract Address: </span>
       <input
         type="text"
