@@ -1,5 +1,6 @@
 
 import Header from "./Header";
+import CopyAddress from "./CopyAddress";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
@@ -54,7 +55,7 @@ export default function HeroSection() {
               </button>
             </a>
 
-            <p className="w-[80%]">CA: 0x2597342ff387B63846eb456419590781C4bfCdAF</p>
+            <CopyAddress />
           </div>
         </div>
 
