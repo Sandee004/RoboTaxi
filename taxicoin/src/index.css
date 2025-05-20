@@ -1,17 +1,7 @@
 @import "tailwindcss";
 
-/* App.css or a global CSS file */
-body::before {
-  content: "SAMPLE";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  font-size: 100px;
-  color: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-  z-index: 0;
-  white-space: nowrap;
+html {
+  scroll-behavior: smooth;
 }
 
 /* globals.css */
