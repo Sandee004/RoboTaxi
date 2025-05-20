@@ -19,7 +19,7 @@ export default function HeroSection() {
           <img src="/home.jpg" className="w-full h-auto object-cover" />
 
           {/* Overlay content (buttons) */}
-          <div className="absolute top-[70%] left-1/2 flex flex-col w-full justify-center px-4 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-[76%] left-1/2 flex flex-col w-full justify-center px-4 transform -translate-x-1/2 -translate-y-1/2">
             <div className="flex mt-8 gap-[10vw] sm:gap-[12vw] md:gap-[18vw] lg:gap-[20vw] justify-center">
               <a
                 href="https://x.com/_taximeme"
@@ -68,7 +68,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex justify-center border-b border-[#39437E] pb-5 mt-5 items-center flex-col">
+        <div className="flex justify-center border-b border-[#39437E] pb-5 mt-8 items-center flex-col">
           <div
             className={`justify-center flex transition-all duration-700 ${
               show ? "translate-y-0" : "translate-y-10"
