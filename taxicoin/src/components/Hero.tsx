@@ -53,6 +53,8 @@ export default function HeroSection() {
                 <img src="/telegram.jpg" className="w-full h-full object-cover rounded-full" />
               </button>
             </a>
+
+            <p className="w-[80%]">CA: 0x2597342ff387B63846eb456419590781C4bfCdAF</p>
           </div>
         </div>
 
