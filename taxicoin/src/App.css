@@ -1,6 +1,1 @@
 /* Also in App.css or wherever your main content styles are */
-#root,
-.app-container {
-  position: relative;
-  z-index: 1;
-}
