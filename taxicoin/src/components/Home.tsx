@@ -37,6 +37,21 @@ const containerStagger = {
     transition: { staggerChildren: 0.1 },
   },
 };
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Delay between each element
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -153,34 +168,69 @@ const Home = () => {
       <div className="pt-24">
         {" "}
         {/* --- HERO --- */}
-        <header className="relative pt-10 pb-20 px-6 flex flex-col items-center text-center max-w-7xl mx-auto">
+        <motion.header
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="relative pt-20 pb-20 px-6 flex flex-col items-center text-center max-w-7xl mx-auto"
+        >
+          {/* --- GLOWING BACKDROP EFFECT --- */}
+          <div className="absolute top-20 w-64 h-64 bg-[#f2c94c] opacity-10 blur-[100px] -z-10 rounded-full animate-pulse" />
+
+          {/* --- FLOATING LOGO --- */}
           <motion.img
-            initial={{ scale: 0, rotate: -10 }}
+            initial={{ scale: 0, rotate: -30 }}
             animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 12,
+              delay: 0.2,
+            }}
             src="/floatingimg.png"
-            className="w-40 sm:w-50 h-auto drop-shadow-[0_0_40px_rgba(242,201,76,0.2)] mb-8"
+            className="w-40 sm:w-56 h-auto drop-shadow-[0_0_50px_rgba(242,201,76,0.3)] mb-10 hover:rotate-6 transition-transform duration-300"
           />
 
+          {/* --- STATUS BADGE --- */}
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-2 mb-4 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-[10px] text-gray-300 font-black uppercase tracking-[0.2em]">
+              Tesla Future Live
+            </span>
+          </motion.div>
+
+          {/* --- SUBHEAD --- */}
+          <motion.h2
+            variants={itemVariants}
+            className="text-[#f2c94c] tracking-[0.4em] font-serif text-xs md:text-sm mb-4 uppercase"
+          >
+            Tesla Autonomous Future
+          </motion.h2>
+
+          {/* --- MAIN TITLE --- */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-9xl font-black italic tracking-tighter mb-8 text-white"
+            variants={itemVariants}
+            className="text-7xl md:text-[10rem] font-black italic tracking-tighter mb-10 text-white drop-shadow-2xl"
           >
             $TAXI
           </motion.h1>
 
           {/* --- CONTRACT ADDRESS BOX --- */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="bg-[#161b22] border border-[#f2c94c]/30 rounded-full px-4 py-2 flex items-center gap-4 mb-8 max-w-[90%] sm:max-w-sm w-full"
+            variants={itemVariants}
+            className="bg-[#161b22] border border-[#f2c94c]/30 rounded-full px-4 py-2.5 flex items-center gap-4 mb-10 max-w-[95%] sm:max-w-md w-full shadow-[0_0_20px_rgba(0,0,0,0.5)]"
           >
-            <code className="text-[10px] md:text-xs truncate flex-1 text-gray-400">
+            <code className="text-[10px] md:text-xs truncate flex-1 text-gray-400 font-mono">
               {ca}
             </code>
             <button
+              className="hover:scale-110 transition-transform active:scale-90"
               onClick={() => {
                 navigator.clipboard.writeText(ca);
                 setCopied(true);
@@ -188,53 +238,47 @@ const Home = () => {
               }}
             >
               {copied ? (
-                <Check size={16} className="text-green-500" />
+                <Check size={18} className="text-green-500" />
               ) : (
-                <Copy size={16} className="text-[#f2c94c]" />
+                <Copy size={18} className="text-[#f2c94c]" />
               )}
             </button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex gap-6 mb-12"
-          >
-            <a
-              href="https://x.com/_taximeme"
-              target="_blank"
-              className="p-3 bg-[#161b22] border border-[#f2c94c]/30 rounded-full text-[#f2c94c] hover:bg-[#f2c94c] hover:text-black transition-all shadow-lg"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="https://t.me/Robotaximeme"
-              target="_blank"
-              className="p-3 bg-[#161b22] border border-[#f2c94c]/30 rounded-full text-[#f2c94c] hover:bg-[#f2c94c] hover:text-black transition-all shadow-lg"
-            >
-              <Send size={20} />
-            </a>
-            <a
-              href="mailto:realctoteam@gmail.com"
-              className="p-3 bg-[#161b22] border border-[#f2c94c]/30 rounded-full text-[#f2c94c] hover:bg-[#f2c94c] hover:text-black transition-all shadow-lg"
-            >
-              <Mail size={20} />
-            </a>
+          {/* --- SOCIALS --- */}
+          <motion.div variants={itemVariants} className="flex gap-5 mb-16">
+            {[
+              { icon: <Twitter size={20} />, link: "https://x.com/_taximeme" },
+              { icon: <Send size={20} />, link: "https://t.me/Robotaximeme" },
+              {
+                icon: <Mail size={20} />,
+                link: "mailto:realctoteam@gmail.com",
+              },
+            ].map((social, i) => (
+              <a
+                key={i}
+                href={social.link}
+                target="_blank"
+                className="p-3.5 bg-[#161b22] border border-[#f2c94c]/20 rounded-full text-[#f2c94c] hover:bg-[#f2c94c] hover:text-black hover:border-[#f2c94c] transition-all duration-300 shadow-xl group"
+              >
+                <div className="group-hover:rotate-[360deg] transition-transform duration-500">
+                  {social.icon}
+                </div>
+              </a>
+            ))}
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="max-w-4xl space-y-4"
-          >
-            <h2 className="text-3xl md:text-7xl font-black leading-tight uppercase italic text-center">
+          {/* --- SLOGAN --- */}
+          <motion.div variants={itemVariants} className="max-w-4xl space-y-4">
+            <h2 className="text-4xl md:text-8xl font-black leading-[0.85] uppercase italic text-center">
               The World's First <br />{" "}
-              <span className="text-[#f2c94c]">Autonomous</span> <br /> Memecoin
+              <span className="text-[#f2c94c] drop-shadow-[0_4px_10px_rgba(242,201,76,0.2)]">
+                Autonomous
+              </span>{" "}
+              <br /> Memecoin
             </h2>
           </motion.div>
-        </header>
+        </motion.header>
         {/* --- ABOUT --- */}
         <section
           id="about"
