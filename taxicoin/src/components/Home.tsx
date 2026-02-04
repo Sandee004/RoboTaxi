@@ -187,7 +187,7 @@ const Home = () => {
               damping: 12,
               delay: 0.2,
             }}
-            src="/floatingimg.png"
+            src="/hero.png"
             className="w-40 sm:w-56 h-auto drop-shadow-[0_0_50px_rgba(242,201,76,0.3)] mb-10 hover:rotate-6 transition-transform duration-300"
           />
 
@@ -290,14 +290,16 @@ const Home = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={slideInLeft}
-              className="border-4 sm:border-8 border-black shadow-[10px_10px_0_0_#39437E] w-full flex justify-center bg-[#0a0e14]"
+              className="border-4 sm:border-8 border-black shadow-[10px_10px_0_0_#39437E] w-full flex justify-center bg-[#0a0e14] overflow-hidden rounded-lg"
             >
               <img
-                src="/20.jpg"
+                src="/about.jpg"
                 alt="About Taxi"
-                className="max-w-full h-auto"
+                /* Added fixed height and object-cover to prevent distortion */
+                className="w-full h-auto md:h-[600px] object-cover"
               />
             </motion.div>
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -313,7 +315,7 @@ const Home = () => {
                 to honor Musk's groundbreaking plan centering around a fleet of
                 self-driving vehicles.
               </p>
-              <div className="p-4 bg-[#f2c94c] border-2 sm:border-4 border-black font-black uppercase text-xs sm:text-sm text-black italic italic">
+              <div className="p-4 bg-[#f2c94c] border-2 sm:border-4 border-black font-black uppercase text-xs sm:text-sm text-black italic">
                 "Affordable, efficient, and sustainable future."
               </div>
             </motion.div>
@@ -377,37 +379,76 @@ const Home = () => {
         {/* --- TOKENOMICS --- */}
         <section
           id="tokenomics"
-          className="py-20 text-black border-y-2 border-white/10 overflow-hidden"
+          className="py-24 bg-[#0a0e14] text-white border-y-2 border-white/10 overflow-hidden"
         >
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl text-[#f2c94c] mb-12 italic uppercase font-black underline decoration-white/10">
-              TOKENOMICS
-            </h2>
+          <div className="max-w-6xl mx-auto px-6">
+            {/* Section Header */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={containerStagger}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full"
+              className="text-center mb-16"
             >
-              {[
-                { l: "TOTAL SUPPLY", v: "100M" },
-                { l: "BUY TAX", v: "0%" },
-                { l: "SELL TAX", v: "0%" },
-                { l: "LIQUIDITY", v: "BURNT" },
-              ].map((s, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeIn}
-                  className="bg-white border-4 border-black p-6 shadow-[6px_6px_0_0_#000] w-full"
-                >
-                  <p className="text-[9px] font-black mb-1 uppercase tracking-widest text-gray-500">
-                    {s.l}
-                  </p>
-                  <p className="text-2xl font-black italic">{s.v}</p>
-                </motion.div>
-              ))}
+              <h2 className="text-4xl md:text-6xl text-[#f2c94c] italic uppercase font-black underline decoration-white/10">
+                TOKENOMICS
+              </h2>
+              <p className="text-gray-400 mt-4 font-medium tracking-widest uppercase text-xs">
+                Autonomous Economy Distribution
+              </p>
             </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* --- IMAGE SIDE --- */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative group"
+              >
+                {/* Glow effect behind the image */}
+                <div className="absolute -inset-4 bg-[#f2c94c] opacity-10 blur-2xl group-hover:opacity-20 transition-opacity rounded-full" />
+
+                <div className="relative border-4 border-[#f2c94c]/30 rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
+                  <img
+                    src="/tokenometrics.jpg"
+                    alt="Robotaxi Economics"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+
+              {/* --- CARDS SIDE --- */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerStagger}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8"
+              >
+                {[
+                  { l: "TOTAL SUPPLY", v: "100M", desc: "Hard Capped" },
+                  { l: "BUY TAX", v: "0%", desc: "No Friction" },
+                  { l: "SELL TAX", v: "0%", desc: "Exit Freely" },
+                  { l: "LIQUIDITY", v: "BURNT", desc: "Permanently Locked" },
+                ].map((s, i) => (
+                  <motion.div
+                    key={i}
+                    variants={fadeIn}
+                    whileHover={{ y: -5, borderColor: "#f2c94c" }}
+                    className="bg-[#161b22] border-2 border-white/5 p-8 rounded-2xl transition-all duration-300"
+                  >
+                    <p className="text-[10px] font-black mb-1 uppercase tracking-[0.2em] text-[#f2c94c]">
+                      {s.l}
+                    </p>
+                    <p className="text-3xl font-black italic mb-1">{s.v}</p>
+                    <p className="text-[10px] text-gray-500 font-bold uppercase">
+                      {s.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
         {/* --- ROADMAP --- */}
@@ -417,7 +458,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              src="/roadmap.jpg"
+              src="/ROADMAP.png"
               className="rounded-2xl border-4 border-[#f2c94c] shadow-xl w-full h-auto"
               alt="Roadmap"
             />
