@@ -177,24 +177,35 @@ const Home = () => {
           {/* --- GLOWING BACKDROP EFFECT --- */}
           <div className="absolute top-20 w-64 h-64 bg-[#f2c94c] opacity-10 blur-[100px] -z-10 rounded-full animate-pulse" />
 
-          {/* --- FLOATING LOGO --- */}
-          <motion.img
+          {/* --- FLOATING LOGO WITH POPUP & YELLOW RIM --- */}
+          <motion.div
             initial={{ scale: 0, rotate: -30 }}
             animate={{ scale: 1, rotate: 0 }}
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
             transition={{
               type: "spring",
-              stiffness: 120,
-              damping: 12,
+              stiffness: 260,
+              damping: 20,
               delay: 0.2,
             }}
-            src="/hero.png"
-            className="w-40 sm:w-56 h-auto drop-shadow-[0_0_50px_rgba(242,201,76,0.3)] mb-10 hover:rotate-6 transition-transform duration-300"
-          />
+            className="relative group cursor-pointer mb-10"
+          >
+            {/* The Glowing Yellow Rim Layer */}
+            <div className="absolute -inset-1.5 bg-[#f2c94c] rounded-[2rem] blur-md opacity-40 group-hover:opacity-80 transition duration-500"></div>
+
+            {/* The Actual Image with Border */}
+            <img
+              src="/hero.png"
+              alt="Robotaxi Hero"
+              className="relative w-40 sm:w-64 h-auto rounded-[2rem] border-4 border-[#f2c94c] shadow-2xl bg-[#0a0e14] object-cover"
+            />
+          </motion.div>
 
           {/* --- STATUS BADGE --- */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-2 mb-4 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full"
+            className="flex items-center gap-2 mb-6 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -259,6 +270,7 @@ const Home = () => {
                 key={i}
                 href={social.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-3.5 bg-[#161b22] border border-[#f2c94c]/20 rounded-full text-[#f2c94c] hover:bg-[#f2c94c] hover:text-black hover:border-[#f2c94c] transition-all duration-300 shadow-xl group"
               >
                 <div className="group-hover:rotate-[360deg] transition-transform duration-500">
@@ -272,7 +284,7 @@ const Home = () => {
           <motion.div variants={itemVariants} className="max-w-4xl space-y-4">
             <h2 className="text-4xl md:text-8xl font-black leading-[0.85] uppercase italic text-center">
               The World's First <br />{" "}
-              <span className="text-[#f2c94c] drop-shadow-[0_4px_10px_rgba(242,201,76,0.2)]">
+              <span className="text-[#f2c94c] drop-shadow-[0_4px_10px_rgba(242,201,76,0.3)]">
                 Autonomous
               </span>{" "}
               <br /> Memecoin
@@ -551,7 +563,8 @@ const Home = () => {
         {/* --- FOOTER --- */}
         <footer className="bg-[#05070a] py-12 px-6 text-center border-t border-white/5">
           <p className="text-[10px] text-gray-600 uppercase font-bold tracking-tight mb-6 italic italic">
-            $Taxicoin has no association with Tesla. Built for the community.
+            $Taxicoin has no association with Tesla. This token is simply paying
+            homage elonmusk vision of autonomous future.
           </p>
           <div className="flex justify-center gap-6 text-[#f2c94c]">
             <motion.div whileHover={{ scale: 1.2 }}>
