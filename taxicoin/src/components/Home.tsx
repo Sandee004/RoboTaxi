@@ -198,7 +198,7 @@ const Home = () => {
             <img
               src="/hero.png"
               alt="Robotaxi Hero"
-              className="relative w-62 sm:w-82 h-auto rounded-[2rem] border-4 border-[#f2c94c] shadow-2xl bg-[#0a0e14] object-cover"
+              className="relative w-92 sm:w-100 h-auto rounded-[2rem] border-4 border-[#f2c94c] shadow-2xl bg-[#0a0e14] object-cover"
             />
           </motion.div>
 
@@ -227,7 +227,7 @@ const Home = () => {
           {/* --- MAIN TITLE --- */}
           <motion.h1
             variants={itemVariants}
-            className="text-7xl md:text-[10rem] font-black italic tracking-tighter mb-10 text-white drop-shadow-2xl"
+            className="text-7xl md:text-[8rem] font-black italic tracking-tighter mb-10 text-white drop-shadow-2xl"
           >
             $TAXI
           </motion.h1>
