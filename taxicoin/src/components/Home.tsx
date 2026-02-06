@@ -167,17 +167,17 @@ const Home = () => {
 
       <div className="pt-24">
         {" "}
-        {/* --- HERO --- */}
+        {/* --- HERO bg-[#f2c94c]--- */}
         <motion.header
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           className="relative pt-20 pb-20 px-6 flex flex-col items-center text-center max-w-7xl mx-auto"
         >
-          {/* --- GLOWING BACKDROP EFFECT --- */}
+          {/* --- COOL BLUE BACKDROP GLOW --- */}
           <div className="absolute top-20 w-64 h-64 bg-[#f2c94c] opacity-10 blur-[100px] -z-10 rounded-full animate-pulse" />
 
-          {/* --- FLOATING LOGO WITH POPUP & YELLOW RIM --- */}
+          {/* --- FLOATING LOGO WITH POPUP & BLUE RIM --- */}
           <motion.div
             initial={{ scale: 0, rotate: -30 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -191,14 +191,14 @@ const Home = () => {
             }}
             className="relative group cursor-pointer mb-10"
           >
-            {/* The Glowing Yellow Rim Layer */}
-            <div className="absolute -inset-1.5 bg-[#f2c94c] rounded-[2rem] blur-md opacity-40 group-hover:opacity-80 transition duration-500"></div>
+            {/* The Deep Blue Glow Layer (Matches the About section vibe) */}
+            <div className="absolute -inset-1.5 bg-[#f2c94c] rounded-md blur-md opacity-40 group-hover:opacity-80 transition duration-500"></div>
 
-            {/* The Actual Image with Border */}
+            {/* The Image with the Deep Blue Rim */}
             <img
               src="/hero.png"
               alt="Robotaxi Hero"
-              className="relative w-92 sm:w-100 h-auto rounded-[2rem] border-4 border-[#f2c94c] shadow-2xl bg-[#0a0e14] object-cover"
+              className="relative w-92 sm:w-100 rounded-md h-auto border-4 border-[#39437E] shadow-2xl bg-[#0a0e14] object-cover"
             />
           </motion.div>
 
@@ -227,7 +227,7 @@ const Home = () => {
           {/* --- MAIN TITLE --- */}
           <motion.h1
             variants={itemVariants}
-            className="text-7xl md:text-[8rem] font-black italic tracking-tighter mb-10 text-white drop-shadow-2xl"
+            className="text-7xl md:text-[10rem] font-black italic tracking-tighter mb-10 text-white drop-shadow-2xl"
           >
             $TAXI
           </motion.h1>
@@ -564,7 +564,7 @@ const Home = () => {
         <footer className="bg-[#05070a] py-12 px-6 text-center border-t border-white/5">
           <p className="text-[10px] text-gray-600 uppercase font-bold tracking-tight mb-6 italic italic">
             $Taxicoin has no association with Tesla. This token is simply paying
-            homage elonmusk vision of autonomous future.
+            homage to elonmusk vision of autonomous future.
           </p>
           <div className="flex justify-center gap-6 text-[#f2c94c]">
             <motion.div whileHover={{ scale: 1.2 }}>
